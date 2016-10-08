@@ -31,7 +31,7 @@ final class User: Model {
 
 extension User: Preparation {
     static func prepare(_ database: Database) throws {
-        try database.create("users") { (creator) in
+        try database.create(entity) { (creator) in
             creator.id()
             creator.string("username")
             creator.string("phone")
@@ -41,6 +41,6 @@ extension User: Preparation {
     }
 
     static func revert(_ database: Database) throws {
-        //
+        try database.delete(entity)
     }
 }
