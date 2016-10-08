@@ -7,7 +7,6 @@ final class Post: Model {
     var content: String
     
     init(content: String) {
-//        self.id = try! UInt64(0).makeNode()
         self.content = content
     }
 
@@ -22,16 +21,6 @@ final class Post: Model {
             "content": content
         ])
     }
-}
-
-extension Post {
-    /**
-        This will automatically fetch from database, using example here to load
-        automatically for example. Remove on real models.
-    */
-//    public convenience init?(from string: String) throws {
-//        self.init(content: string)
-//    }
 }
 
 extension Post: Preparation {
