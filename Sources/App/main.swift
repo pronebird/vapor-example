@@ -10,8 +10,7 @@ drop.get { req in
     ])
 }
 
-let posts = PostController()
-
 drop.resource("posts", PostController())
+drop.resource("users", UserController())
 
 drop.run()
